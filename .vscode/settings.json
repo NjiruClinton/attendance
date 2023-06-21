@@ -1,0 +1,4 @@
+{
+    "terminal.integrated.tabs.defaultIcon": "file-directory-create",
+    "dart.cliConsole": "terminal"
+}
