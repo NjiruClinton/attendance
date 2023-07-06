@@ -1,6 +1,7 @@
 
 // ignore: import_of_legacy_library_into_null_safe
-import 'package:flushbar/flushbar.dart';
+import 'package:another_flushbar/flushbar.dart';
+// import 'package:flushbar/flushbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
