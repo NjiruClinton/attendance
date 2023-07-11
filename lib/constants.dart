@@ -1,6 +1,7 @@
 
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:another_flushbar/flushbar.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:flushbar/flushbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +10,7 @@ bool isWeb=false;
 bool isMobile=true;
 
 FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
 
 void showFlushBar (BuildContext context, String topMessage, String bottomMessage){
  Flushbar(

@@ -1,5 +1,9 @@
+import 'dart:html';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:project/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:project/models/user_model.dart';
 
 class AuthMethods{
   Future<String>loginUser (
@@ -31,7 +35,9 @@ class AuthMethods{
   {
     String result = "Some error occured";
     try{
-      await firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
+      UserCredential credential = await firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
+      UserModel userModel = UserModel(credential.user!.uid, userName.trim(), email, "", "", "", "", "", "", "");
+      await firebaseFirestore.collection("users").doc(credential.user!.uid).set(userModel.toJson());
       result = "Success";
     }
     on FirebaseAuthException catch(e)
